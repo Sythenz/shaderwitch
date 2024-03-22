@@ -4,4 +4,4 @@ title = "Shader Witchcraft"
 weight = 1
 +++
 
-This is a new chapter.
+Nothing to see here yet...
