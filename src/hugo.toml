@@ -1,0 +1,4 @@
+baseURL = 'https://shaderwitch.github.io/'
+languageCode = 'en-us'
+title = 'Shaderwit.ch - Tutorials on Shader Witchcraft and an attempt at documenting Unreal Engines Render pipeline'
+theme = 'hugo-theme-relearn'
