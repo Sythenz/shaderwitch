@@ -32,8 +32,6 @@ they allow for masking a given pass and also expose entire lighting (and additio
 A typical implementation of a custom Shading Model would be Cel Shading, a technique that requires access to the [LightAccumulator]()
 in order to be able to have better control over direct shadows attenuation.
 
-{{< figure src="https://ue-cdn.artstation.com/imgproxy/mehlNzVVPPvF1P0QBoR9YS11vuJncCLusjhpYvREunA/filename:CelshadingUE1.png/resizing_type:fit/width:3840/height:2160/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9pbWFnZXMvOGU1ZTJkMDctYmJmMC00OGE5LWE1MGQtOGIzYTBhYjIyZGY1L2NlbHNoYWRpbmd1ZTEucG5n" title="One3y3 tutorial on Custom Shading Models in UE5 [1]" >}}
-
 Alternatively, if you are just looking to implement a custom Post Process pass (doesn't require engine modification!) then
 check out Scene View Extensions instead.
 
@@ -43,8 +41,3 @@ Before getting started, there are a few things we ini commands we can add to mak
 easier, see [here](/unrealrenderpipeline/shadingmodels/helpfulinicommands/).
 
 Once you've checked that out, head over to [Creating a Shading Model](/unrealrenderpipeline/shadingmodels/creatingshadingmodels/)!
-
----
-
-### Sources  
-> [1] [New shading models and changing the GBuffer by One3y3](https://dev.epicgames.com/community/learning/tutorials/2R5x/unreal-engine-new-shading-models-and-changing-the-gbuffer) dev.epicgames.com.

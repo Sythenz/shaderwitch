@@ -1,7 +1,7 @@
 +++
 title = 'Creating a Shading Model'
 date = 2024-03-21T15:37:22+01:00
-draft = true
+draft = false
 weight = 0
 +++
 
@@ -21,18 +21,18 @@ to just replicating an existing implementation of another shading model.
 
 Here are the files we'll modify today.
 
-| Files Modified            | Description                                                                                                                       |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| EngineTypes.h             | Standard definitions for different types across Unreal Engine.                                                                    |
-| MaterialShared.cpp        | Test3                                                                                                                             |
-| Material.cpp              | Base class for a material, defines all that needs to be handled. Base class for a material, defines all that needs to be handled. |
-| MaterialGraph.cpp         | Test3                                                                                                                             |
-| SceneRenderTargets.cpp    | Test3                                                                                                                             |
-| HLSLMaterialTranslator.h  | Test3                                                                                                                             |
-| ShadingCommon.ush         | Test3                                                                                                                             |
-| BasePassCommon.ush        | Test3                                                                                                                             |
-| ShadingModelsMaterial.ush | Test3                                                                                                                             |
-| BasePassPixelShader.ush   | Test3                                                                                                                             |
+| Files Modified            | Description |
+|---------------------------|-------------|
+| EngineTypes.h             |             |
+| MaterialShared.cpp        |             |
+| Material.cpp              |             |
+| MaterialGraph.cpp         |             |
+| SceneRenderTargets.cpp    |             |
+| HLSLMaterialTranslator.h  |             |
+| ShadingCommon.ush         |             |
+| BasePassCommon.ush        |             |
+| ShadingModelsMaterial.ush |             |
+| BasePassPixelShader.ush   |             |
 
 ### Prerequisites
 

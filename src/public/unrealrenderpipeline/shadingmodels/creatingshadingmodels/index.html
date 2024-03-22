@@ -12,6 +12,7 @@
     <meta name="twitter:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
 AuthorAlessa &ldquo;Codekitten&rdquo; Baker Page StatusWIP Unreal Version5.2
 Getting Started Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down to just replicating an existing implementation of another shading model.">
+
     <meta property="og:title" content="Creating a Shading Model :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <meta property="og:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
 AuthorAlessa &ldquo;Codekitten&rdquo; Baker Page StatusWIP Unreal Version5.2
@@ -24,19 +25,19 @@ Getting Started Implementing a custom shading model in Unreal Engine can be one 
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <title>Creating a Shading Model :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1711120936" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711120936" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1711120936" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711120936" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711120936" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1711120936" rel="stylesheet">
-    <link href="/css/fonts.css?1711120936" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711120936" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1711120936" rel="stylesheet">
-    <link href="/css/theme-auto.css?1711120936" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1711120936" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1711120936" rel="stylesheet">
-    <link href="/css/print.css?1711120936" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1711120936" rel="stylesheet">
-    <script src="/js/url.js?1711120936"></script>
-    <script src="/js/variant.js?1711120936"></script>
+    <link href="/css/fontawesome-all.min.css?1711122820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711122820" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1711122820" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711122820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711122820" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1711122820" rel="stylesheet">
+    <link href="/css/fonts.css?1711122820" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711122820" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1711122820" rel="stylesheet">
+    <link href="/css/theme-auto.css?1711122820" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1711122820" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1711122820" rel="stylesheet">
+    <link href="/css/print.css?1711122820" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1711122820" rel="stylesheet">
+    <script src="/js/url.js?1711122820"></script>
+    <script src="/js/variant.js?1711122820"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
@@ -148,43 +149,43 @@ to just replicating an existing implementation of another shading model.</p>
 <tbody>
 <tr>
 <td>EngineTypes.h</td>
-<td>Standard definitions for different types across Unreal Engine.</td>
+<td></td>
 </tr>
 <tr>
 <td>MaterialShared.cpp</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>Material.cpp</td>
-<td>Base class for a material, defines all that needs to be handled. Base class for a material, defines all that needs to be handled.</td>
+<td></td>
 </tr>
 <tr>
 <td>MaterialGraph.cpp</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>SceneRenderTargets.cpp</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>HLSLMaterialTranslator.h</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>ShadingCommon.ush</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>BasePassCommon.ush</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>ShadingModelsMaterial.ush</td>
-<td>Test3</td>
+<td></td>
 </tr>
 <tr>
 <td>BasePassPixelShader.ush</td>
-<td>Test3</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -301,12 +302,12 @@ ahead of this branch, I cannot guarantee you won&rsquo;t have a little headache 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1711120936" defer></script>
-        <script src="/js/lunr/lunr.min.js?1711120936" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1711120936" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1711120936" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1711120936" defer></script>
-        <script src="/js/search.js?1711120936" defer></script>
+        <script src="/js/auto-complete.js?1711122820" defer></script>
+        <script src="/js/lunr/lunr.min.js?1711122820" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1711122820" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1711122820" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1711122820" defer></script>
+        <script src="/js/search.js?1711122820" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -376,8 +377,8 @@ ahead of this branch, I cannot guarantee you won&rsquo;t have a little headache 
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1711120936" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1711120936" defer></script>
-    <script src="/js/theme.js?1711120936" defer></script>
+    <script src="/js/clipboard.min.js?1711122820" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1711122820" defer></script>
+    <script src="/js/theme.js?1711122820" defer></script>
   </body>
 </html>
