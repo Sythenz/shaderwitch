@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plugins on Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
+    <link>http://localhost:1313/unrealrenderpipeline/plugins/index.html</link>
+    <description>Recent content in Plugins on Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Mar 2024 15:37:22 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/unrealrenderpipeline/plugins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scene View Extensions</title>
+      <link>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</link>
+      <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
+      <guid>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</guid>
+      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2Additional Resources [1] </description>
+    </item>
+  </channel>
+</rss>

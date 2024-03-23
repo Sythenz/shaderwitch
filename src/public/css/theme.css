@@ -1878,6 +1878,7 @@ span.math:has(> mjx-container[display]) {
     font-size: .8rem;
     font-weight: 500;
     vertical-align: middle;
+    margin-right: 10px;
 }
 
 .badge > * {

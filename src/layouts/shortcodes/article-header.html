@@ -1,0 +1,45 @@
+{{- if .Page.Params.Notice }}
+    {{ partial "shortcodes/notice.html" (dict
+        "page"    .Page
+        "color"   ""
+        "content" "This page is a <b>current topic of research</b>, some things may not be accurate."
+        "icon"    "cat"
+        "style"   "icon primary"
+        "title"   .Page.Params.Notice
+    ) }}
+{{- end }}
+
+<p>
+{{- if .Page.Params.Author }}
+    {{- partial "shortcodes/badge.html" (dict
+    "page"    .Page
+    "color"   ""
+    "content" .Page.Params.Author
+    "icon" "info-circle"
+    "style"   "primary"
+    "title"   "Author"
+    ) }}
+{{- end }}
+
+{{- if .Page.Params.status }}    
+    {{- partial "shortcodes/badge.html" (dict
+    "page"    .Page
+    "color"   ""
+    "content" .Page.Params.status
+    "icon" "info-circle"
+    "style"   "primary"
+    "title"   (.Get "title")
+    ) }}
+{{- end }}
+
+{{- if .Page.Params.UnrealVersion }}
+    {{- partial "shortcodes/badge.html" (dict
+    "page"    .Page
+    "color"   ""
+    "content" .Page.Params.UnrealVersion
+    "icon" "star"
+    "style"   "primary"
+    "title"   (.Get "title")
+    ) }}
+{{- end }}
+</p>

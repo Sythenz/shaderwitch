@@ -4,7 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85cead02-f206-4a24-8d8e-859020327b33" name="Changes" comment="" />
+    <list default="true" id="85cead02-f206-4a24-8d8e-859020327b33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/archetypes/article.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/UnrealRenderPipeline/Plugins/SceneViewExtensions.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/UnrealRenderPipeline/Plugins/_index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/shortcodes/article-header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.src.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/ShaderWitchcraft/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/ShaderWitchcraft/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/_index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/_index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/creatingshadingmodels.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/creatingshadingmodels.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/helpfulinicommands.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/UnrealRenderPipeline/ShadingModels/helpfulinicommands.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/_markdownexamples/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/_markdownexamples/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/categories/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/shaderwitchcraft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/shaderwitchcraft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/tags/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/unrealrenderpipeline/shadingmodels/index.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-relearn/static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/hugo-theme-relearn/static/css/theme.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,36 +43,36 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2e30xKscenoKLdSUOhAhCzVdhrP" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\aless\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\aless\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\aless\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\aless\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\aless\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\aless\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,6 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711118199384</updated>
       <workItem from="1711118200498" duration="5243000" />
+      <workItem from="1711191558827" duration="6981000" />
     </task>
     <servers />
   </component>

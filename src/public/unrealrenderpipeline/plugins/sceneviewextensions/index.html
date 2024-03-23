@@ -8,18 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Creating a Shading Model :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <meta name="twitter:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; BakerWIP5.2Getting Started Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down to just replicating an existing implementation of another shading model.">
+    <meta name="twitter:title" content="Scene View Extensions :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta name="twitter:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; BakerWIP5.2Additional Resources [1] ">
 
-    <meta property="og:title" content="Creating a Shading Model :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <meta property="og:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; BakerWIP5.2Getting Started Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down to just replicating an existing implementation of another shading model.">
+    <meta property="og:title" content="Scene View Extensions :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; BakerWIP5.2Additional Resources [1] ">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">
-    <meta property="article:section" content="Shading Models :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:url" content="http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html">
+    <meta property="article:section" content="Plugins :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <meta property="article:published_time" content="2024-03-21T15:37:22+01:00">
     <meta property="article:modified_time" content="2024-03-21T15:37:22+01:00">
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <title>Creating a Shading Model :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
+    <title>Scene View Extensions :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/css/fontawesome-all.min.css?1711200992" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711200992" rel="stylesheet"></noscript>
     <link href="/css/nucleus.css?1711200992" rel="stylesheet">
@@ -53,7 +53,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">
+  <body class="mobile-support html" data-url="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -66,17 +66,8 @@
               <div class="topbar-content">
                 <div class="topbar-content-wrapper"><nav class="TableOfContents">
   <ul>
-    <li><a href="#getting-started">Getting Started</a>
+    <li>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-      </ul>
-    </li>
-    <li><a href="#adding-our-shading-model">Adding our Shading Model</a>
-      <ul>
-        <li><a href="#modifying-the-material-editor">Modifying the Material Editor</a></li>
-        <li><a href="#enablingdisabling-pins">Enabling/Disabling Pins</a></li>
-        <li><a href="#custom-data">Custom Data</a></li>
-        <li><a href="#playing-with-some-hlsl">Playing with some HLSL</a></li>
         <li><a href="#additional-resources">Additional Resources</a></li>
       </ul>
     </li>
@@ -89,13 +80,13 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/index.html"><span itemprop="name">Unreal Render Pipeline</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/shadingmodels/index.html"><span itemprop="name">Shading Models</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Creating a Shading Model</span><meta itemprop="position" content="4"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/plugins/index.html"><span itemprop="name">Plugins</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Scene View Extensions</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html" title="Helpful Ini Commands (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/plugins/index.html" title="Plugins (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/shadingmodels/index.html" title="Shading Models (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -114,7 +105,7 @@
           <article class="default">
             <header class="headline">
             </header>
-<h1 id="creating-a-shading-model">Creating a Shading Model</h1>
+<h1 id="scene-view-extensions">Scene View Extensions</h1>
 
 
     
@@ -127,91 +118,10 @@ This page is a <b>current topic of research</b>, some things may not be accurate
 
 <p><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i></span><span class="badge-content">WIP</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">5.2</span></span>
 </p>
-<h2 id="getting-started">Getting Started</h2>
-<p>Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because
-it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down
-to just replicating an existing implementation of another shading model.</p>
-<p>Here are the files we&rsquo;ll modify today.</p>
-<table>
-<thead>
-<tr>
-<th>Files Modified</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EngineTypes.h</td>
-<td>Holds most enums available in the engine that aren&rsquo;t mapped to any particular class.</td>
-</tr>
-<tr>
-<td>MaterialShared.cpp</td>
-<td></td>
-</tr>
-<tr>
-<td>Material.cpp</td>
-<td></td>
-</tr>
-<tr>
-<td>MaterialGraph.cpp</td>
-<td></td>
-</tr>
-<tr>
-<td>SceneRenderTargets.cpp</td>
-<td></td>
-</tr>
-<tr>
-<td>HLSLMaterialTranslator.h</td>
-<td></td>
-</tr>
-<tr>
-<td>ShadingCommon.ush</td>
-<td></td>
-</tr>
-<tr>
-<td>BasePassCommon.ush</td>
-<td></td>
-</tr>
-<tr>
-<td>ShadingModelsMaterial.ush</td>
-<td></td>
-</tr>
-<tr>
-<td>BasePassPixelShader.ush</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="prerequisites">Prerequisites</h3>
-<p>At the time of this document being written, go ahead and git clone and then compile <strong>5.2 branch</strong> of Unreal Engine.
-When you have a successful compile, we can get started by modifying our first file. If you are using an engine version
-ahead of this branch, I cannot guarantee you won&rsquo;t have a little headache if any of these things change.</p>
-<h2 id="adding-our-shading-model">Adding our Shading Model</h2>
-<blockquote>
-<p>TODO: Adding to EngineTypes.h, and other files to inform Unreal that a new shading model exists.</p>
-</blockquote>
-<h3 id="modifying-the-material-editor">Modifying the Material Editor</h3>
-<h3 id="enablingdisabling-pins">Enabling/Disabling Pins</h3>
-<blockquote>
-<p>TODO: MP_ and switch cases to add and modify pins</p>
-</blockquote>
-<h3 id="custom-data">Custom Data</h3>
-<blockquote>
-<p>TODO: Describe Custom Data, and how it applies to our HLSL and is passed from the material editor as a compiled parameter.</p>
-</blockquote>
-<h3 id="playing-with-some-hlsl">Playing with some HLSL</h3>
-<blockquote>
-<p>TODO: Add our custom data output to Diffuse Color in Base Pass. As a quick example of passing the parameter around.</p>
-</blockquote>
 <hr>
 <h3 id="additional-resources">Additional Resources</h3>
 <blockquote>
-<p>[1] <a href="https://docs.unrealengine.com/4.27/en-US/RenderingAndGraphics/Materials/MaterialProperties/LightingModels/" target="_blank">Shading Models Official Documentation</a> docs.unrealengine.com<br>
-[2] <a href="https://dev.epicgames.com/community/learning/tutorials/2R5x/unreal-engine-new-shading-models-and-changing-the-gbuffer" target="_blank">New shading models and changing the GBuffer by One3y3</a> dev.epicgames.com.<br>
-[3] <a href="https://medium.com/@lordned/ue4-rendering-part-6-adding-a-new-shading-model-e2972b40d72d" target="_blank">Unreal Engine 4 Rendering Part 6: Adding a new Shading Model</a> medium.com/@lordned <br>
-[4] <a href="https://medium.com/@solaslin/learning-unreal-engine-4-implement-cel-shading-w-outline-using-custom-shading-model-in-ue4-22-1-775bccdb9ffb" target="_blank">Implement Cel-Shading w/ Outline Using Custom Shading Model in UE4.22 (1)</a> medium.com/@solaslin<br>
-[5] <a href="https://zhuanlan.zhihu.com/p/212785666" target="_blank">[UE4] Custom Shading Model</a> zhuanlan.zhihu.com <br>
-[6] <a href="https://markjg.com/blog/porting-custom-shading-models-to-ue5/" target="_blank">Porting custom UE4 shading models to UE5 (or how to tackle the new GBuffer codegen)</a> markjg.com</p>
+<p>[1] <a href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html"></a></p>
 </blockquote>
 
             <footer class="footline">
@@ -313,11 +223,11 @@ ahead of this branch, I cannot guarantee you won&rsquo;t have a little headache 
           <ul class="enlarge morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/index.html" class=""><a class="padding" href="/shaderwitchcraft/index.html">Shader Witchcraft</a></li>
           <li data-nav-id="/unrealrenderpipeline/index.html" class="parent "><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
-          <li data-nav-id="/unrealrenderpipeline/shadingmodels/index.html" class="parent alwaysopen"><a class="padding" href="/unrealrenderpipeline/shadingmodels/index.html">Shading Models</a><ul id="R-subsections-90165760a5fb2be621c8533af575e351" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="parent alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class="active"><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
+          <li data-nav-id="/unrealrenderpipeline/shadingmodels/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/shadingmodels/index.html">Shading Models</a><ul id="R-subsections-90165760a5fb2be621c8533af575e351" class="morespace collapsible-menu">
           <li data-nav-id="/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html">Helpful Ini Commands</a></li>
-          <li data-nav-id="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" class="active"><a class="padding" href="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">Creating a Shading Model</a></li></ul></li></ul></li>
+          <li data-nav-id="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">Creating a Shading Model</a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -332,7 +242,7 @@ ahead of this branch, I cannot guarantee you won&rsquo;t have a little headache 
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>
