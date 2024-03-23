@@ -1,7 +1,7 @@
 +++
 title = 'Creating a Shading Model'
 date = 2024-03-21T15:37:22+01:00
-draft = false
+draft = true
 weight = 0
 +++
 
@@ -50,11 +50,11 @@ ahead of this branch, I cannot guarantee you won't have a little headache if any
 
 > TODO: MP_ and switch cases to add and modify pins
 
-## Custom Data
+### Custom Data
 
 > TODO: Describe Custom Data, and how it applies to our HLSL and is passed from the material editor as a compiled parameter.
 
-## Playing with some HLSL
+### Playing with some HLSL
 
 > TODO: Add our custom data output to Diffuse Color in Base Pass. As a quick example of passing the parameter around.
 
