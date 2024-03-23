@@ -7,6 +7,7 @@
     <list default="true" id="85cead02-f206-4a24-8d8e-859020327b33" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shaderwitch-content" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.src.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.src.dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1711118199384</updated>
       <workItem from="1711118200498" duration="5243000" />
-      <workItem from="1711191558827" duration="7810000" />
+      <workItem from="1711191558827" duration="8366000" />
     </task>
     <servers />
   </component>

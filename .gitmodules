@@ -1,3 +1,6 @@
 [submodule "src/themes/hugo-theme-relearn"]
 	path = src/themes/hugo-theme-relearn
 	url = https://github.com/Sythenz/hugo-theme-relearn.git
+[submodule "src/content"]
+	path = src/content
+	url = https://github.com/Sythenz/shaderwitch-content.git
