@@ -12,15 +12,18 @@
     <loc>http://localhost:1313/shaderwitchcraft/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/shaderwitchcraft/stylizedlineargradients/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/unrealrenderpipeline/index.html</loc>
     <lastmod>2024-03-21T15:37:22+01:00</lastmod>
   </url>
   <url>
-    <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html</loc>
-    <lastmod>2024-03-21T14:48:29+01:00</lastmod>
+    <loc>http://localhost:1313/website/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/website/index.html</loc>
+    <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html</loc>
+    <lastmod>2024-03-21T14:48:29+01:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html</loc>

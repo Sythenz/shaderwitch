@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.124.1">
+    <meta name="generator" content="Relearn 5.26.2+tip">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Stylized Linear Gradients :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta name="twitter:description" content="AuthorAlessa &#34;Codekitten&#34; BakerComplete5.2NoteThis article was originally written for 80.lvl, thank you for hosting my little tutorial!
+This tutorial is to teach you the basics of creating that stylized linear gradient seen in games like DOTA and League of Legends. We’ll be focusing mostly on learning World Position, Object Position and Object Radius. These three nodes combined will allow us to achieve the effect we need.
+In this tutorial I’ll be using a stylized blossom tree created by the awesome Jonathan Riley and has donated it to be used with this tutorial.">
+
+    <meta property="og:title" content="Stylized Linear Gradients :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:description" content="AuthorAlessa &#34;Codekitten&#34; BakerComplete5.2NoteThis article was originally written for 80.lvl, thank you for hosting my little tutorial!
+This tutorial is to teach you the basics of creating that stylized linear gradient seen in games like DOTA and League of Legends. We’ll be focusing mostly on learning World Position, Object Position and Object Radius. These three nodes combined will allow us to achieve the effect we need.
+In this tutorial I’ll be using a stylized blossom tree created by the awesome Jonathan Riley and has donated it to be used with this tutorial.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/shaderwitchcraft/stylizedlineargradients/index.html">
+    <meta property="article:section" content="Shader Witchcraft :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <title>Stylized Linear Gradients :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
+    <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
+    <link href="/css/fontawesome-all.min.css?1711364658" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1711364658" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1711364658" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711364658" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1711364658" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1711364658" rel="stylesheet">
+    <link href="/css/fonts.css?1711364658" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1711364658" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1711364658" rel="stylesheet">
+    <link href="/css/theme-auto.css?1711364658" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1711364658" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1711364658" rel="stylesheet">
+    <link href="/css/print.css?1711364658" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1711364658" rel="stylesheet">
+    <script src="/js/url.js?1711364658"></script>
+    <script src="/js/variant.js?1711364658"></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      // variant stuff
+      window.relearn.themeVariantModifier='';
+      window.variants && variants.init( [ 'auto' ] );
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/shaderwitchcraft/stylizedlineargradients/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#absolute-world-position">Absolute World Position</a>
+      <ul>
+        <li><a href="#additional-resources">Additional Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/shaderwitchcraft/index.html"><span itemprop="name">Shader Witchcraft</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Stylized Linear Gradients</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/shaderwitchcraft/index.html" title="Shader Witchcraft (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/index.html" title="Unreal Render Pipeline (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="stylized-linear-gradients">Stylized Linear Gradients</h1>
+
+
+
+<p><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i></span><span class="badge-content">Complete</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">5.2</span></span>
+</p>
+
+<div class="box notices cstyle info primary">
+  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Note</div>
+  <div class="box-content">
+
+<p>This article was originally written for <a href="https://80.lv/articles/creating-stylized-linear-gradient/" target="_blank">80.lvl</a>,
+thank you for hosting my little tutorial!</p>
+</div>
+</div>
+<p><a href="#R-image-a798075c36019aec9c0b0f38c571c6a0" class="lightbox-link"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a798075c36019aec9c0b0f38c571c6a0"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png"></a></p>
+<p>This tutorial is to teach you the basics of creating that stylized linear gradient seen in games like DOTA and League of
+Legends. We’ll be focusing mostly on learning World Position, Object Position and Object Radius. These three nodes
+combined will allow us to achieve the effect we need.</p>
+<p>In this tutorial I’ll be using a stylized blossom tree created by the awesome <a href="https://www.artstation.com/oblique/profile" target="_blank">Jonathan Riley</a>
+and has donated it to be used with this tutorial. All files for this tutorial will be available by the download link at the bottom.</p>
+<p>So let’s get started!</p>
+<h2 id="absolute-world-position">Absolute World Position</h2>
+<p>So, first things first – Let’s talk Absolute World Position. This material editor node gives the exact X, Y, and Z
+coordinates of your material on an object, relative to world. To demonstrate this, let’s create a basic material,
+i’m calling mine <code>M_Stylized</code> (which will become the basis for all stylized assets we use) and let’s drop
+in a ‘World Position’ node and plug it into Emissive.</p>
+<p>Placing this on our mesh you’ll see a glowing sphere of different colors, each color represents a different Unreal Unit
+at a given point per axis (X, Y, Z). To make this more visible, let’s place a clamp right after it and plug it into
+emissive.</p>
+<p><a href="#R-image-8c1551b91ce3546cf87186456c531e7d" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8c1551b91ce3546cf87186456c531e7d"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy"></a>
+<figure><img src="https://cdn.80.lv/api/upload/content/f9/images/5d2c7e7ba7737/widen_920x0.png"><figcaption>
+      <h4>World Position Node in Emissive</h4>
+    </figcaption>
+</figure>
+</p>
+<p>By placing this material on any mesh in our scene and moving it around, you’ll find the color of the material changing
+based on the colors of its position.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/25/5d2c7e7f31831.gif"><figcaption>
+      <h4>Absolute World Position on a mesh</h4>
+    </figcaption>
+</figure>
+
+<p>So naturally, for our linear gradient we need to grab the Z vector, as we want our gradient to face upward in our
+material. Let’s add a component mask before the clamp and use B (Z), unchecking R and G. Once we place this on the mesh,
+drag the mesh around and you’ll find that when the mesh passes below the grid in editor, Z: 0.0, the mesh will
+turn black.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/20/5d2c7e7cb52d5.gif"><figcaption>
+      <h4>Gradient split relative to world</h4>
+    </figcaption>
+</figure>
+
+<p>However, we would like our gradient to stay relative to the mesh itself. This means we’ve got some math to do! This is
+where Object Position and Object Radius come in. Object Position gives us the value of the center point of the bounds
+the material is assigned to. We’ll subtract this from our World Position Now you’ll find a hard split of black and white
+that stays with our mesh when we move it up and down! This will become the basis of our gradient.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/2a/images/5d2c7e78d9ec6/widen_920x0.png"><figcaption>
+      <h4>Subtracting our Object Position and radius to keep things relative.</h4>
+    </figcaption>
+</figure>
+
+<figure><img src="https://cdn.80.lv/api/upload/content/f9/5d2c7e75b0875.gif"><figcaption>
+      <h4>An example of our gradient moving relative to the object.</h4>
+    </figcaption>
+</figure>
+
+<p>Let’s bring Object Radius into the mix. Object Radius gives us a value equal to the overall radius of our object. We will
+subtract this from our object position, you can think of this as a ‘range’ between bounds and center of the mesh.
+Again, we want to make sure our math is subtracted from the world position.</p>
+<p>When we do this, you’ll find the mesh is white, this is because we’re not taking into account the height extent we want
+our gradient to travel up. We can do this by dividing by a scalar value before our component mask. Changing this value
+extends or decreases the falloff on our gradient.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/9d/5d2c7e79b4806.png"><figcaption>
+      <h4>Giving our gradient an exponent.</h4>
+    </figcaption>
+</figure>
+
+<p>As an example, I’ve created a material instance and made the scalar value a parameter to show below.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/9d/5d2c7e8421c3c.gif"><figcaption>
+      <h4>An example of how the parameters work in a Material Instance.</h4>
+    </figcaption>
+</figure>
+
+<p>Alright! So we now have a very cool looking gradient that we can use for our stylized characters and props. But let’s say
+you want the gradient to begin higher up on the mesh instead of at the bottom? Well we know that the Object Position,
+that gives us the center of the bounds to our object, subtracting the object radius giving us our radius value for the
+gradient. We also know that these values give us a Vector 3, or X Y and Z coordinate.</p>
+<p>So why not offset the Z by adding to it? Let’s give it a shot. To create our new vector, we’ll take a Vector 2 and append
+on a scalar parameter. This gives us a new vector where X and Y are constant at 0, and the Z is our variable.
+If we add this to our math to find the gradient, we retain our X and Y, because adding 0 gives you the same value,
+and adding the Z’s together gives us our offset for where the gradient starts.</p>
+<p>And here is an example of it in action!</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/97/images/5d2c7e77da89b/widen_920x0.png"><figcaption>
+      <h4>Adding ZOffset to our position.</h4>
+    </figcaption>
+</figure>
+
+<p>Now we have a 0-1 gradient value that we can plug into a Linear Interpolate node. This node blends between two inputs
+based on an alpha, in this case our gradient. For the purposes of the tutorial, rather than using two different albedo
+textures, I’ve just multiplied one by 0.1 to get a much darker version of the same texture. By plugging the multiplied
+one into A, and the original into B, we get a gradient between light and dark. Here is an image of the final material.</p>
+<p><a href="#R-image-f970ba50f1ec32a229989c998ba5649a" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f970ba50f1ec32a229989c998ba5649a"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy"></a>
+<figure><img src="https://cdn.80.lv/api/upload/content/4e/images/5d2c7e7a80c7c/widen_920x0.png"><figcaption>
+      <h4>Linear interpolating diffuse color by gradient.</h4>
+    </figcaption>
+</figure>
+</p>
+<p>Let’s apply this material to our mesh and  see what our results are.</p>
+<figure><img src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png"><figcaption>
+      <h4>Final Stylized Linear Gradient, isn&#39;t it pretty 🥺❤️</h4>
+    </figcaption>
+</figure>
+
+<p><a href="#R-image-b23d0562a58438537d220eb7a53d8e59" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b23d0562a58438537d220eb7a53d8e59"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy"></a></p>
+<p>If you have any questions, feel free to email <a href="mailto:alessa@codekitten.me" target="_blank">alessa@codekitten.me</a> – I’ll be happy to answer.</p>
+<p>Alessa ❤️</p>
+<hr>
+<h3 id="additional-resources">Additional Resources</h3>
+<blockquote>
+<p>[1] <a href="https://80.lv/articles/creating-stylized-linear-gradient/" target="_blank">Original Article on 80.lvl</a> 80.lv</p>
+</blockquote>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <style>
+            #R-logo svg,
+            #R-logo svg * {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              fill: #282828 !important;
+              fill: var(--MENU-SECTIONS-BG-color) !important;
+              opacity: .945;
+            }
+            a#R-logo {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+              font-family: 'Work Sans', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+              font-size: 1.875rem;
+              font-weight: 300;
+              margin-top: .3125rem;
+              text-transform: uppercase;
+              white-space: nowrap;
+              color: white;
+            }
+            a#R-logo:hover {
+              color: #282828;
+              color: var(--MENU-SECTIONS-BG-color);
+            }
+            #R-logo svg {
+              margin-bottom: -1.25rem;
+              margin-inline-start: -1.47rem;
+              margin-inline-end: .5rem;
+            }
+            @media only all and (max-width: 59.999rem) {
+              a#R-logo {
+                font-size: 1.5625rem;
+                margin-top: -.1875rem;
+              }
+              #R-logo svg {
+                margin-bottom: -.75rem;
+                margin-inline-start: -1.47rem;
+                margin-inline-end: .5rem;
+              }
+            }
+            @media all and (-ms-high-contrast:none) {
+              /* IE11s understanding of positioning is weird at best */
+              a#R-logo {
+                margin-top: -3.625rem;
+              }
+              #R-logo svg {
+                margin-bottom: -3.875rem;
+                margin-left: -1.47rem;
+                margin-right: .5rem;
+              }
+            }
+            @media only all and (-ms-high-contrast:none) and (max-width: 59.999rem) {
+              #R-logo svg {
+                margin-left: -1.47rem;
+                margin-right: .5rem;
+              }
+            }
+          </style>
+          <a id="R-logo" href="/index.html">
+          SHADERWIT.CH
+          </a>
+        </div>
+        <div class="searchbox default-animation">
+          <i class="fas fa-search" title="Search (CTRL+ALT+f)"></i>
+          <label class="a11y-only" for="R-search-by">Search</label>
+          <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+          <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1711364658" defer></script>
+        <script src="/js/lunr/lunr.min.js?1711364658" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1711364658" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1711364658" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1711364658" defer></script>
+        <script src="/js/search.js?1711364658" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-topics">
+          <ul class="enlarge morespace collapsible-menu">
+          <li data-nav-id="/shaderwitchcraft/index.html" class="parent "><a class="padding" href="/shaderwitchcraft/index.html">Shader Witchcraft</a><ul id="R-subsections-435dc2108793be63a79713c1f61e24a2" class="morespace collapsible-menu">
+          <li data-nav-id="/shaderwitchcraft/stylizedlineargradients/index.html" class="active"><a class="padding" href="/shaderwitchcraft/stylizedlineargradients/index.html">Stylized Linear Gradients</a></li></ul></li>
+          <li data-nav-id="/unrealrenderpipeline/index.html" class=""><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
+          <li data-nav-id="/unrealrenderpipeline/shadingmodels/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/shadingmodels/index.html">Shading Models</a><ul id="R-subsections-90165760a5fb2be621c8533af575e351" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html">Helpful Ini Commands</a></li>
+          <li data-nav-id="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">Creating a Shading Model</a></li></ul></li></ul></li>
+          <li data-nav-id="/website/index.html" class=""><a class="padding" href="/website/index.html">Website Status</a></li>
+          </ul>
+        </div>
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/shaderwitchcraft/stylizedlineargradients/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.variants && variants.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.variants && variants.markSelectedVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">      <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#ba5386', 'V7V61VLED');kofiwidget2.draw();</script>
+      <br />
+      <p>Website by <a href="http://codekitten.me">Alessa "Codekitten" Baker</a>.</p>
+	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1711364658" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1711364658" defer></script>
+    <script src="/js/theme.js?1711364658" defer></script>
+  </body>
+</html>

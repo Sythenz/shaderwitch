@@ -379,13 +379,22 @@ dd {
     vertical-align: bottom;
 }
 
+#R-body figure {
+    box-sizing: border-box;
+    padding: 5px;
+    background: #282828;
+}
+
 #R-body figure > figcaption{
-    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #282828;
 }
 
 #R-body figure > figcaption > h4{
-    font-size: 1.0rem;
+    font-size: 0.9rem;
     font-weight: 500;
+    color: rgba(150, 150, 150, 255);
     margin: 0;
 }
 
