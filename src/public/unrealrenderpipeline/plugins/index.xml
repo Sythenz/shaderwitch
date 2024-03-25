@@ -13,7 +13,8 @@
       <link>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
       <guid>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</guid>
-      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2Additional Resources [1] </description>
+      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2What are Scene View Extensions? Scene View Extensions (SVEs) are in essence a relatively simple way to inject into the render pipeline your own shader (Pixel, Vertex or Compute Shader) from your own HLSL to be compiled on the Render Dependency Graph.
+Since ISceneViewExtension is extensible, it allows for this to be called within a plugin making it one of the easier ways to add to the render pipeline without requiring Engine Modification.</description>
     </item>
   </channel>
 </rss>
