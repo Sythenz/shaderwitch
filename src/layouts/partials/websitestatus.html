@@ -1,12 +1,14 @@
 ﻿<table>
     <tr>
         <th>Page</th>
+        <th>Author</th>
         <th>Status</th>
     </tr>
 {{ range .Site.RegularPages }}
     {{ if .Title }}
         <tr>
             <td><a href="{{ .RelPermalink }}">{{ .Title }}</a></td>
+            <td>{{ .Page.Params.Author }}</td>
             <td>{{ .Page.Params.Notice }}</td>
         </tr>
     {{ end }}
