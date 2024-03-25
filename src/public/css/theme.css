@@ -379,16 +379,25 @@ dd {
     vertical-align: bottom;
 }
 
-#R-body figure {
-    box-sizing: border-box;
-    padding: 5px;
-    background: #282828;
+#R-body figure > figcaption{
+    margin: 0;
 }
 
-#R-body figure > figcaption{
+#R-body figure > figcaption > h4{
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+#R-body figure {
     padding: 10px;
     box-sizing: border-box;
     background: #282828;
+}
+#R-body figure > figcaption{
+    padding: 10px;
+    box-sizing: border-box;
+    background: #202020;
 }
 
 #R-body figure > figcaption > h4{
@@ -396,12 +405,6 @@ dd {
     font-weight: 500;
     color: rgba(150, 150, 150, 255);
     margin: 0;
-}
-
-#R-body figure > figcaption > p{
-    font-size: .85rem;
-    font-weight: 300;
-    margin-top: .15rem;
 }
 #R-body figure > figcaption > h4 + p{
     margin-top: 0;
