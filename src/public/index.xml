@@ -23,5 +23,12 @@
       <description>The purpose of this section of Shaderwit.ch is to give an overview and to document areas of Unreal Engine&amp;rsquo;s render pipeline that I have explored. Unfortunately, most things found here - with the exception of anything under Plugins - will require that you run a custom build of the engine since this will require engine modification to proceed.
 To learn to build your own version of Unreal Engine please see the official documentation.</description>
     </item>
+    <item>
+      <title>Website Status</title>
+      <link>http://localhost:1313/website/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/website/index.html</guid>
+      <description>{{ partial &amp;ldquo;websitestatus.html&amp;rdquo; . }}</description>
+    </item>
   </channel>
 </rss>
