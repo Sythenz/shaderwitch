@@ -21,7 +21,7 @@ In general, it&amp;rsquo;s a good idea to always attempt to write anything in Un
       <link>http://localhost:1313/unrealrenderpipeline/shadingmodels/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
       <guid>http://localhost:1313/unrealrenderpipeline/shadingmodels/index.html</guid>
-      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerCompleteWhat is a Shading Model? A shading model simply describes how a given surface renders a pixel depending on lighting, camera direction, and the surface.
+      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; Baker Page StatusCompleteWhat is a Shading Model? A shading model simply describes how a given surface renders a pixel depending on lighting, camera direction, and the surface.
 If you are familiar with regularly creating Unlit materials, you are likely trying to do something that doesn&amp;rsquo;t follow Unreal&amp;rsquo;s PBR (GGX) implementation and trying to remove or add your own lighting to better calculate your material&amp;rsquo;s aesthetic.
 This unfortunately leads to the limitation of having to use Material Parameter Collections, Dynamic Material Instances, attempting to implement in a Post Process Material or Mesh Custom Data to pass in the lighting and can get quite tedious (and expensive) to implement.</description>
     </item>
