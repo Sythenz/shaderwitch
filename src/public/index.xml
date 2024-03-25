@@ -13,7 +13,7 @@
       <link>http://localhost:1313/shaderwitchcraft/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/shaderwitchcraft/index.html</guid>
-      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2Shader Witch [ shay-der wich ]noun
+      <description>Shader Witch [ shay-der wich ]noun
 A mysterious being that practices the dark arts of manipulating pixels, and creating chaos in a given renderer. My little playground of tutorials on teaching you Shader Witchcraft, the art of shader black magic, mathematics and a smidge of graphics programming.</description>
     </item>
     <item>
@@ -29,8 +29,8 @@ To learn to build your own version of Unreal Engine please see the official docu
       <link>http://localhost:1313/website/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/website/index.html</guid>
-      <description>Here you can find a list of all the current articles that are currently being worked on, and if they are being planned, Work in Progress, or Complete.
-PageAuthorStatusStylized Linear GradientsAlessa &amp;#34;Codekitten&amp;#34; BakerHelpful Ini CommandsAlessa &amp;#34;Codekitten&amp;#34; BakerPlannedCreating a Shading ModelAlessa &amp;#34;Codekitten&amp;#34; BakerWork in ProgressScene View ExtensionsAlessa &amp;#34;Codekitten&amp;#34; BakerWork in Progress</description>
+      <description>Here you can find a list of all the current articles that are currently being worked on, and if they are being planned or Work in Progress.
+PageAuthorStatusHelpful Ini CommandsAlessa &amp;#34;Codekitten&amp;#34; BakerPlannedCreating a Shading ModelAlessa &amp;#34;Codekitten&amp;#34; BakerWork in ProgressScene View ExtensionsAlessa &amp;#34;Codekitten&amp;#34; BakerWork in Progress</description>
     </item>
   </channel>
 </rss>
