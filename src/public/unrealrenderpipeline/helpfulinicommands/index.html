@@ -5,42 +5,41 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
     <meta name="generator" content="Relearn 5.26.2+tip">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
-AuthorAlessa Baker Page StatusComplete Unreal VersionNA SkillIntermediate
-One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html">
+    <meta name="twitter:title" content="Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta name="twitter:description" content="PlannedThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; Baker Page StatusWIP Unreal Version5.2Workflow There are a couple of paths that Unreal Engine&rsquo;s render pipeline can be extended - Scene View Extensions, Virtual Shader Paths to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of the engine as an Engine Modification.
+I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.">
 
-    <meta property="og:title" content="">
-    <meta property="og:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
-AuthorAlessa Baker Page StatusComplete Unreal VersionNA SkillIntermediate
-One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html">
+    <meta property="og:title" content="Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:description" content="PlannedThis page is a current topic of research, some things may not be accurate.AuthorAlessa &#34;Codekitten&#34; Baker Page StatusWIP Unreal Version5.2Workflow There are a couple of paths that Unreal Engine&rsquo;s render pipeline can be extended - Scene View Extensions, Virtual Shader Paths to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of the engine as an Engine Modification.
+I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/_markdownexamples/index.html">
-    <meta property="article:section" content="Welcome to Shaderwit.ch :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:url" content="http://localhost:1313/unrealrenderpipeline/helpfulinicommands/index.html">
+    <meta property="article:section" content="Unreal Render Pipeline :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="article:published_time" content="2024-03-21T14:48:29+01:00">
+    <meta property="article:modified_time" content="2024-03-21T14:48:29+01:00">
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <title></title>
+    <title>Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1712350942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712350942" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1712350942" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712350942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712350942" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1712350942" rel="stylesheet">
-    <link href="/css/fonts.css?1712350942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712350942" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1712350942" rel="stylesheet">
-    <link href="/css/theme-auto.css?1712350942" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1712350942" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1712350942" rel="stylesheet">
-    <link href="/css/print.css?1712350942" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1712350942" rel="stylesheet">
-    <script src="/js/url.js?1712350942"></script>
-    <script src="/js/variant.js?1712350942"></script>
+    <link href="/css/fontawesome-all.min.css?1712273536" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712273536" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1712273536" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712273536" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712273536" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1712273536" rel="stylesheet">
+    <link href="/css/fonts.css?1712273536" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712273536" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1712273536" rel="stylesheet">
+    <link href="/css/theme-auto.css?1712273536" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1712273536" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1712273536" rel="stylesheet">
+    <link href="/css/print.css?1712273536" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1712273536" rel="stylesheet">
+    <script src="/js/url.js?1712273536"></script>
+    <script src="/js/variant.js?1712273536"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -56,7 +55,7 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/_markdownexamples/index.html">
+  <body class="mobile-support html" data-url="/unrealrenderpipeline/helpfulinicommands/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -67,18 +66,25 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#compiling-shaders">Compiling Shaders</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/index.html"><span itemprop="name">Unreal Render Pipeline</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Getting Started</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/authors/alessa-codekitten-baker/index.html" title="Alessa &#39;Codekitten&#39; Baker (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/index.html" title="Unreal Render Pipeline (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/plugins/index.html" title="Plugins (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -92,37 +98,41 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable home" tabindex="-1">
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="getting-started">Getting Started</h1>
 
-<article class="home">
-  <header class="headline">
-  </header>
-  <h1 id=""></h1>
 
-  
-<div class="box notices cstyle info primary">
-  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Work in Progress</div>
+    
+<div class="box notices cstyle icon primary">
+  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Planned</div>
   <div class="box-content">
-
-<p>This page is a current topic of research, some things may not be accurate.</p>
+<p>
+This page is a <b>current topic of research</b>, some things may not be accurate.</div>
 </div>
-</div>
-<p><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-user"></i> Author</span><span class="badge-content">Alessa Baker</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">Complete</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Unreal Version</span><span class="badge-content">NA</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Skill</span><span class="badge-content">Intermediate</span></span></p>
-<figure><img src="https://ue-cdn.artstation.com/imgproxy/mehlNzVVPPvF1P0QBoR9YS11vuJncCLusjhpYvREunA/filename:CelshadingUE1.png/resizing_type:fit/width:3840/height:2160/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9pbWFnZXMvOGU1ZTJkMDctYmJmMC00OGE5LWE1MGQtOGIzYTBhYjIyZGY1L2NlbHNoYWRpbmd1ZTEucG5n"><figcaption>
-      <h4>One3y3 tutorial on Custom Shading Models in UE5 [1]</h4>
-    </figcaption>
-</figure>
 
-<p><a href="https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html" target="_blank">https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html</a></p>
+<p><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">WIP</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Unreal Version</span><span class="badge-content">5.2</span></span>
+</p>
+<h2 id="workflow">Workflow</h2>
+<p>There are a couple of paths that Unreal Engine&rsquo;s render pipeline can be extended - Scene View Extensions, Virtual Shader
+Paths to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of
+the engine as an Engine Modification.</p>
+<p>I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s
+rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.</p>
+<h2 id="compiling-shaders">Compiling Shaders</h2>
+<p>In any of the three mentioned paths, shaders can be compiled by running <code>recompileshaders all</code> as a command in
+the console. Recompile shaders command works by invalidating the render cache by changing a GUID stored in
+<code>Engine/Shaders/Public/ShaderVersion.ush</code>.</p>
+<p>The All command will force the entire DDC to be invalidated and recompiled
+and can take quite some time to recompile everything, a better command I use instead is <code>recompileshaders changed</code> which
+instead only recompiles shaders that Unreal has recognized as a modified usf/ush.</p>
 
-  <footer class="footline">
-  </footer>
-</article>
-
+            <footer class="footline">
+            </footer>
+          </article>
         </div>
       </main>
     </div>
@@ -201,12 +211,12 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1712350942" defer></script>
-        <script src="/js/lunr/lunr.min.js?1712350942" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1712350942" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1712350942" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1712350942" defer></script>
-        <script src="/js/search.js?1712350942" defer></script>
+        <script src="/js/auto-complete.js?1712273536" defer></script>
+        <script src="/js/lunr/lunr.min.js?1712273536" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1712273536" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1712273536" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1712273536" defer></script>
+        <script src="/js/search.js?1712273536" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -219,17 +229,13 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
           <ul class="enlarge morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/index.html" class=""><a class="padding" href="/shaderwitchcraft/index.html">Shader Witchcraft</a><ul id="R-subsections-435dc2108793be63a79713c1f61e24a2" class="morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/stylizedlineargradients/index.html" class=""><a class="padding" href="/shaderwitchcraft/stylizedlineargradients/index.html">Stylized Linear Gradients</a></li></ul></li>
-          <li data-nav-id="/unrealrenderpipeline/index.html" class=""><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/gettingstarted/index.html" class=""><a class="padding" href="/unrealrenderpipeline/gettingstarted/index.html">Getting Started</a></li>
+          <li data-nav-id="/unrealrenderpipeline/index.html" class="parent "><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/helpfulinicommands/index.html" class="active"><a class="padding" href="/unrealrenderpipeline/helpfulinicommands/index.html">Getting Started</a></li>
           <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a></li>
           <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
           <li data-nav-id="/unrealrenderpipeline/shadingmodels/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/shadingmodels/index.html">Shading Models</a><ul id="R-subsections-90165760a5fb2be621c8533af575e351" class="morespace collapsible-menu">
           <li data-nav-id="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">Creating a Shading Model</a></li></ul></li></ul></li>
           <li data-nav-id="/website/index.html" class=""><a class="padding" href="/website/index.html">Website Status</a></li>
-          <li data-nav-id="/authors/index.html" class=""><a class="padding" href="/authors/index.html">Authors</a><ul id="R-subsections-6e5a5fb24d7f62bc82f1596187307028" class="morespace collapsible-menu">
-          <li data-nav-id="/authors/alessa-codekitten-baker/index.html" class=""><a class="padding" href="/authors/alessa-codekitten-baker/index.html">Alessa &#39;Codekitten&#39; Baker</a></li></ul></li>
-          <li data-nav-id="/_markdownexamples/index.html" class="active"><a class="padding" href="/_markdownexamples/index.html"></a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -244,7 +250,7 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/_markdownexamples/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/unrealrenderpipeline/helpfulinicommands/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -284,8 +290,8 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1712350942" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1712350942" defer></script>
-    <script src="/js/theme.js?1712350942" defer></script>
+    <script src="/js/clipboard.min.js?1712273536" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1712273536" defer></script>
+    <script src="/js/theme.js?1712273536" defer></script>
   </body>
 </html>

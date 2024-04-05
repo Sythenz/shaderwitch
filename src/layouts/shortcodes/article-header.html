@@ -10,16 +10,18 @@
 {{- end }}
 
 <p>
-{{- if .Page.Params.Author }}
-    {{- partial "shortcodes/badge.html" (dict
-    "page"    .Page
-    "color"   ""
-    "content" .Page.Params.Author
-    "icon" "info-circle"
-    "style"   "primary"
-    "title"   "Author"
-    ) }}
-{{- end }}
+    {{- if .Page.Params.Author }}
+    <a href="{{ .Page.Params.Author_url }}">
+        {{- partial "shortcodes/badge.html" (dict
+        "page"    .Page
+        "color"   ""
+        "content" .Page.Params.Author
+        "icon" "info-circle"
+        "style"   "primary"
+        "title"   "Author"
+        ) }}
+    </a>
+    {{- end }}
 
 {{- if .Page.Params.status }}    
     {{- partial "shortcodes/badge.html" (dict

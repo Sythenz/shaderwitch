@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/unrealrenderpipeline/gettingstarted/index.html</loc>
+    <lastmod>2024-03-21T14:48:29+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html</loc>
+    <lastmod>2024-03-21T15:37:22+01:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/unrealrenderpipeline/plugins/index.html</loc>
     <lastmod>2024-03-21T15:37:22+01:00</lastmod>
   </url>
@@ -15,6 +23,9 @@
     <loc>http://localhost:1313/shaderwitchcraft/stylizedlineargradients/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/unrealrenderpipeline/plugins/virtualshaderpaths/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/unrealrenderpipeline/index.html</loc>
     <lastmod>2024-03-21T15:37:22+01:00</lastmod>
   </url>
@@ -22,16 +33,14 @@
     <loc>http://localhost:1313/website/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html</loc>
-    <lastmod>2024-03-21T14:48:29+01:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html</loc>
-    <lastmod>2024-03-21T15:37:22+01:00</lastmod>
+    <loc>http://localhost:1313/authors/alessa-codekitten-baker/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</loc>
     <lastmod>2024-03-21T15:37:22+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/authors/index.html</loc>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>

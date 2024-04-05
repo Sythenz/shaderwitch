@@ -9,6 +9,14 @@
     <lastBuildDate>Thu, 21 Mar 2024 15:37:22 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/unrealrenderpipeline/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Getting Started</title>
+      <link>http://localhost:1313/unrealrenderpipeline/gettingstarted/index.html</link>
+      <pubDate>Thu, 21 Mar 2024 14:48:29 +0100</pubDate>
+      <guid>http://localhost:1313/unrealrenderpipeline/gettingstarted/index.html</guid>
+      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerPage StatusWIPWorkflow There are a couple of paths that Unreal Engine&amp;rsquo;s render pipeline can be extended - Scene View Extensions, Virtual Shader Paths to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of the engine as an Engine Modification.
+I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&amp;rsquo;s rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.</description>
+    </item>
+    <item>
       <title>Plugins</title>
       <link>http://localhost:1313/unrealrenderpipeline/plugins/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
@@ -21,7 +29,7 @@ In general, it&amp;rsquo;s a good idea to always attempt to write anything in Un
       <link>http://localhost:1313/unrealrenderpipeline/shadingmodels/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
       <guid>http://localhost:1313/unrealrenderpipeline/shadingmodels/index.html</guid>
-      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; Baker Page StatusCompleteWhat is a Shading Model? A shading model simply describes how a given surface renders a pixel depending on lighting, camera direction, and the surface.
+      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerPage StatusCompleteWhat is a Shading Model? A shading model simply describes how a given surface renders a pixel depending on lighting, camera direction, and the surface.
 If you are familiar with regularly creating Unlit materials, you are likely trying to do something that doesn&amp;rsquo;t follow Unreal&amp;rsquo;s PBR (GGX) implementation and trying to remove or add your own lighting to better calculate your material&amp;rsquo;s aesthetic.
 This unfortunately leads to the limitation of having to use Material Parameter Collections, Dynamic Material Instances, attempting to implement in a Post Process Material or Mesh Custom Data to pass in the lighting and can get quite tedious (and expensive) to implement.</description>
     </item>

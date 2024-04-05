@@ -5,24 +5,23 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
     <meta name="generator" content="Relearn 5.26.2+tip">
-    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
-AuthorAlessa Baker Page StatusComplete Unreal VersionNA SkillIntermediate
-One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html">
+    <meta name="twitter:title" content="Virtual Shader Paths :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta name="twitter:description" content="AuthorAlessa &#34;Codekitten&#34; BakerUnreal Version5.2Virtual Shader Paths are probably the simplest way in Unreal Engine to include and use your own custom HLSL Global Shaders. They can also be included within Plugins making them easily sharable.
+A more in-depth method of actually implementing this as a globally accessible shader can be found in the sources below [1].
+C&#43;&#43; Plugin Setup Setting this up is remarkably easy, and requires a single method called in StartupModule from ShaderCore.">
 
-    <meta property="og:title" content="">
-    <meta property="og:description" content="Work in ProgressThis page is a current topic of research, some things may not be accurate.
-AuthorAlessa Baker Page StatusComplete Unreal VersionNA SkillIntermediate
-One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html">
+    <meta property="og:title" content="Virtual Shader Paths :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:description" content="AuthorAlessa &#34;Codekitten&#34; BakerUnreal Version5.2Virtual Shader Paths are probably the simplest way in Unreal Engine to include and use your own custom HLSL Global Shaders. They can also be included within Plugins making them easily sharable.
+A more in-depth method of actually implementing this as a globally accessible shader can be found in the sources below [1].
+C&#43;&#43; Plugin Setup Setting this up is remarkably easy, and requires a single method called in StartupModule from ShaderCore.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/_markdownexamples/index.html">
-    <meta property="article:section" content="Welcome to Shaderwit.ch :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:url" content="http://localhost:1313/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">
+    <meta property="article:section" content="Plugins :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <title></title>
+    <title>Virtual Shader Paths :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
     <link href="/css/fontawesome-all.min.css?1712350942" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712350942" rel="stylesheet"></noscript>
     <link href="/css/nucleus.css?1712350942" rel="stylesheet">
@@ -39,8 +38,8 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
     <script src="/js/variant.js?1712350942"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -56,7 +55,7 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/_markdownexamples/index.html">
+  <body class="mobile-support html" data-url="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -67,18 +66,30 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#c-plugin-setup">C++ Plugin Setup</a></li>
+    <li><a href="#material-custom-node">Material Custom Node</a>
+      <ul>
+        <li><a href="#additional-resources">Additional Resources</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/index.html"><span itemprop="name">Unreal Render Pipeline</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/plugins/index.html"><span itemprop="name">Plugins</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Virtual Shader Paths</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/authors/alessa-codekitten-baker/index.html" title="Alessa &#39;Codekitten&#39; Baker (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/plugins/index.html" title="Plugins (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" title="Scene View Extensions (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -92,36 +103,84 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable home" tabindex="-1">
+      <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
+          <article class="default">
+            <header class="headline">
+            </header>
+<h1 id="virtual-shader-paths">Virtual Shader Paths</h1>
 
-<article class="home">
-  <header class="headline">
-  </header>
-  <h1 id=""></h1>
 
-  
+
+<p>
+    <a href="/Authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
+    </a><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Unreal Version</span><span class="badge-content">5.2</span></span>
+</p>
+<p>Virtual Shader Paths are probably the simplest way in Unreal Engine to include and use your own custom HLSL Global Shaders.
+They can also be included within Plugins making them easily sharable.</p>
+<p>A more in-depth method of actually implementing this as a globally accessible shader can be found in the sources below <a href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html#additional-resources">[1]</a>.</p>
+<h2 id="c-plugin-setup">C++ Plugin Setup</h2>
+<p>Setting this up is remarkably easy, and requires a single method called in StartupModule from <code>ShaderCore</code>. It should
+also be added to the Runtime Module of your plugin since the shader also needs to be accessible in your cooked game.</p>
+<p><code>AddShaderSourceDirectoryMapping()</code> takes two parameters, the first is the Virtual path - this is a path that just
+gives unreal a relative place to reference and is what we will use later in our Custom Node. The second is the actual
+path, in this specific example we use the plugin manager to find the base directory of our plugin and a folder called
+&ldquo;shaders&rdquo; within that.</p>
+<p>Unreal handles all platform support here, since we are using the plugin manager to find the directory - this will return
+a path that is platform dependent. From experience this works on consoles and mobile too!</p>
+<p>It is also possible to get the relative path to the project here and use a project relative shader directory, but
+generally speaking it is better practice to contain everything within a plugin that can be disabled if something goes
+wrong in production.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> FMyCoolRuntimeModule<span style="color:#f92672">::</span>StartupModule()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// This code will execute after your module is loaded into memory;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// the exact timing is specified in the .uplugin file per-module
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* Adding our shader directory relative to NoodleRenderingRuntime */</span>
+</span></span><span style="display:flex;"><span>	AddShaderSourceDirectoryMapping(<span style="color:#e6db74">&#34;/MyRuntimePlugin&#34;</span>, GetShaderDirectory());
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FString FMyCoolRuntimeModule<span style="color:#f92672">::</span>GetShaderDirectory() <span style="color:#66d9ef">const</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> FPaths<span style="color:#f92672">::</span>Combine(IPluginManager<span style="color:#f92672">::</span>Get().FindPlugin(TEXT(<span style="color:#e6db74">&#34;MyRuntimePlugin&#34;</span>))<span style="color:#f92672">-&gt;</span>GetBaseDir(), TEXT(<span style="color:#e6db74">&#34;Shaders&#34;</span>));
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div><p>In order to compile correctly, we must include <code>ShaderCore</code> as a linked library, add this to your in your
+<code>MyRuntimePlugin.build.cs</code> of your plugin:</p>
+
 <div class="box notices cstyle info primary">
-  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Work in Progress</div>
+  <div class="box-label"><i class="fa-fw fas fa-cat"></i> 4.21 and under</div>
   <div class="box-content">
 
-<p>This page is a current topic of research, some things may not be accurate.</p>
+<p>For older versions of Unreal, the include here is <code>RenderCore</code> anything above is <code>ShaderCore</code>.</p>
 </div>
 </div>
-<p><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-user"></i> Author</span><span class="badge-content">Alessa Baker</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">Complete</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Unreal Version</span><span class="badge-content">NA</span></span>
-<span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Skill</span><span class="badge-content">Intermediate</span></span></p>
-<figure><img src="https://ue-cdn.artstation.com/imgproxy/mehlNzVVPPvF1P0QBoR9YS11vuJncCLusjhpYvREunA/filename:CelshadingUE1.png/resizing_type:fit/width:3840/height:2160/aHR0cHM6Ly9kMWl2N2RiNDR5aGd4bi5jbG91ZGZyb250Lm5ldC9pbWFnZXMvOGU1ZTJkMDctYmJmMC00OGE5LWE1MGQtOGIzYTBhYjIyZGY1L2NlbHNoYWRpbmd1ZTEucG5n"><figcaption>
-      <h4>One3y3 tutorial on Custom Shading Models in UE5 [1]</h4>
-    </figcaption>
-</figure>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>		PrivateDependencyModuleNames.AddRange(
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">string</span>[]
+</span></span><span style="display:flex;"><span>			{
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;CoreUObject&#34;</span>,
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;Engine&#34;</span>,
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;Slate&#34;</span>,
+</span></span><span style="display:flex;"><span>				<span style="color:#e6db74">&#34;SlateCore&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;ShaderCore&#34;</span> <span style="color:#75715e">// Add this</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#75715e">// ... add private dependencies that you statically link with here ...	</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>			);</span></span></code></pre></div><h2 id="material-custom-node">Material Custom Node</h2>
+<p>The Material Custom Node does allow for includes, but unfortunately is somewhat finicky to use with this setup.</p>
+<p>As far as I can tell, outside of creating your own node to handle compilation and overriding something like the
+<code>OnPostEditChange</code> it does require that you either detach the node, reattach and hit Apply in the Material Editor.
+Or just make a change to the code specified within the custom node text box itself.</p>
+<p>Here is the code to use within the custom node, as you can see, this is where the virtual path comes in:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hlsl" data-lang="hlsl"><span style="display:flex;"><span><span style="color:#75715e">#include &#34;/MyRuntimePlugin/Common.usf&#34;;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;</span></span></code></pre></div><hr>
+<h3 id="additional-resources">Additional Resources</h3>
+<blockquote>
+<p>[1] <a href="https://medium.com/realities-io/using-compute-shaders-in-unreal-engine-4-f64bac65a907" target="_blank">Using Compute Shaders in Unreal Engine 4</a> medium.com/realities-io<br>
+[2] <a href="https://forums.unrealengine.com/t/virtual-shader-source-path-link-custom-shaders-shadertoy-demo-download/119996" target="_blank">Virtual Shader Source Path - Link custom Shaders - Shadertoy Demo download</a> forums.unrealengine.com <br>
+[3] <a href="https://github.com/MaximeDup/UnrealEngine_ShaderLinking/tree/master" target="_blank">UnrealEngine HLSL Shader Linking</a> github.com/MaximeDup</p>
+</blockquote>
 
-<p><a href="https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html" target="_blank">https://mcshelby.github.io/hugo-theme-relearn/basics/installation/index.html</a></p>
-
-  <footer class="footline">
-  </footer>
-</article>
+            <footer class="footline">
+            </footer>
+          </article>
 
         </div>
       </main>
@@ -219,17 +278,16 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
           <ul class="enlarge morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/index.html" class=""><a class="padding" href="/shaderwitchcraft/index.html">Shader Witchcraft</a><ul id="R-subsections-435dc2108793be63a79713c1f61e24a2" class="morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/stylizedlineargradients/index.html" class=""><a class="padding" href="/shaderwitchcraft/stylizedlineargradients/index.html">Stylized Linear Gradients</a></li></ul></li>
-          <li data-nav-id="/unrealrenderpipeline/index.html" class=""><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/index.html" class="parent "><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
           <li data-nav-id="/unrealrenderpipeline/gettingstarted/index.html" class=""><a class="padding" href="/unrealrenderpipeline/gettingstarted/index.html">Getting Started</a></li>
-          <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a></li>
+          <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="parent alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html" class="active"><a class="padding" href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a></li>
           <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
           <li data-nav-id="/unrealrenderpipeline/shadingmodels/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/shadingmodels/index.html">Shading Models</a><ul id="R-subsections-90165760a5fb2be621c8533af575e351" class="morespace collapsible-menu">
           <li data-nav-id="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html" class=""><a class="padding" href="/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html">Creating a Shading Model</a></li></ul></li></ul></li>
           <li data-nav-id="/website/index.html" class=""><a class="padding" href="/website/index.html">Website Status</a></li>
           <li data-nav-id="/authors/index.html" class=""><a class="padding" href="/authors/index.html">Authors</a><ul id="R-subsections-6e5a5fb24d7f62bc82f1596187307028" class="morespace collapsible-menu">
           <li data-nav-id="/authors/alessa-codekitten-baker/index.html" class=""><a class="padding" href="/authors/alessa-codekitten-baker/index.html">Alessa &#39;Codekitten&#39; Baker</a></li></ul></li>
-          <li data-nav-id="/_markdownexamples/index.html" class="active"><a class="padding" href="/_markdownexamples/index.html"></a></li>
           </ul>
         </div>
         <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
@@ -244,7 +302,7 @@ One3y3 tutorial on Custom Shading Models in UE5 [1] https://mcshelby.github.io/h
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/_markdownexamples/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

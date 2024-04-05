@@ -9,11 +9,20 @@
     <lastBuildDate>Thu, 21 Mar 2024 15:37:22 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/unrealrenderpipeline/plugins/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Virtual Shader Paths</title>
+      <link>http://localhost:1313/unrealrenderpipeline/plugins/virtualshaderpaths/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/unrealrenderpipeline/plugins/virtualshaderpaths/index.html</guid>
+      <description>AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerUnreal Version5.2Virtual Shader Paths are probably the simplest way in Unreal Engine to include and use your own custom HLSL Global Shaders. They can also be included within Plugins making them easily sharable.
+A more in-depth method of actually implementing this as a globally accessible shader can be found in the sources below [1].
+C++ Plugin Setup Setting this up is remarkably easy, and requires a single method called in StartupModule from ShaderCore.</description>
+    </item>
+    <item>
       <title>Scene View Extensions</title>
       <link>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
       <guid>http://localhost:1313/unrealrenderpipeline/plugins/sceneviewextensions/index.html</guid>
-      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2What are Scene View Extensions? Scene View Extensions (SVEs) are in essence a relatively simple way to inject into the render pipeline your own shader (Pixel, Vertex or Compute Shader) from your own HLSL to be compiled on the Render Dependency Graph.
+      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerPage StatusWIP Unreal Version5.2What are Scene View Extensions? Scene View Extensions (SVEs) are in essence a relatively simple way to inject into the render pipeline your own shader (Pixel, Vertex or Compute Shader) from your own HLSL to be compiled on the Render Dependency Graph.
 Since ISceneViewExtension is extensible, it allows for this to be called within a plugin making it one of the easier ways to add to the render pipeline without requiring Engine Modification.</description>
     </item>
   </channel>

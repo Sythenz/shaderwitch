@@ -14,7 +14,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/shaderwitchcraft/index.html</guid>
       <description>Shader Witch [ shay-der wich ]noun
-A mysterious being that practices the dark arts of manipulating pixels, and creating chaos in a given renderer. My little playground of tutorials on teaching you Shader Witchcraft, the art of shader black magic, mathematics and a smidge of graphics programming.</description>
+A mysterious being that practices the dark arts of manipulating pixels, creating shaders and manifesting chaos in a given renderer. My little playground of tutorials on teaching you Shader Witchcraft, the art of shader black magic, mathematics and a smidge of graphics programming.</description>
     </item>
     <item>
       <title>Unreal Render Pipeline</title>
@@ -30,7 +30,16 @@ To learn to build your own version of Unreal Engine please see the official docu
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/website/index.html</guid>
       <description>Here you can find a list of all the current articles that are currently being worked on, and if they are being planned or Work in Progress.
-PageAuthorStatusHelpful Ini CommandsAlessa &amp;#34;Codekitten&amp;#34; BakerPlannedCreating a Shading ModelAlessa &amp;#34;Codekitten&amp;#34; BakerWork in ProgressScene View ExtensionsAlessa &amp;#34;Codekitten&amp;#34; BakerWork in Progress</description>
+PageAuthorStatusGetting StartedAlessa &amp;#34;Codekitten&amp;#34; BakerWork in ProgressCreating a Shading ModelAlessa &amp;#34;Codekitten&amp;#34; BakerWork in ProgressScene View ExtensionsAlessa &amp;#34;Codekitten&amp;#34; BakerWork in Progress</description>
+    </item>
+    <item>
+      <title>Authors</title>
+      <link>http://localhost:1313/authors/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/authors/index.html</guid>
+      <description>As this website progresses, I hope to have multiple contributors who can share their knowledge and expertise on rendering and developing shaders in Unreal Engine. Here you will find the list of contributors to the website, along with their socials, and a list of articles they have written or helped write.
+Should you wish to contribute, you can message me on Discord (Codekitten) or email me at Alessa@codekitten.me.
+Alessa ❤️</description>
     </item>
   </channel>
 </rss>

@@ -9,18 +9,11 @@
     <lastBuildDate>Thu, 21 Mar 2024 15:37:22 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/unrealrenderpipeline/shadingmodels/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Helpful Ini Commands</title>
-      <link>http://localhost:1313/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html</link>
-      <pubDate>Thu, 21 Mar 2024 14:48:29 +0100</pubDate>
-      <guid>http://localhost:1313/unrealrenderpipeline/shadingmodels/helpfulinicommands/index.html</guid>
-      <description>PlannedThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2</description>
-    </item>
-    <item>
       <title>Creating a Shading Model</title>
       <link>http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html</link>
       <pubDate>Thu, 21 Mar 2024 15:37:22 +0100</pubDate>
       <guid>http://localhost:1313/unrealrenderpipeline/shadingmodels/creatingshadingmodels/index.html</guid>
-      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerWIP5.2Getting Started Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down to just replicating an existing implementation of another shading model.</description>
+      <description>Work in ProgressThis page is a current topic of research, some things may not be accurate.AuthorAlessa &amp;#34;Codekitten&amp;#34; BakerPage StatusWIP Unreal Version5.2Getting Started Implementing a custom shading model in Unreal Engine can be one of the most enjoyable and rewarding experiences, because it opens up so much more opportunity to experiment in custom rendering with minimal code changes. A lot of it comes down to just replicating an existing implementation of another shading model.</description>
     </item>
   </channel>
 </rss>
