@@ -213,7 +213,7 @@ a > .badge {
     background-color: var(--INTERNAL-PRIMARY-color);
     border: 1px solid var(--INTERNAL-MENU-SEARCH-BORDER-color);
     border-radius: 5px;
-    min-height: 250px;
+    min-height: 210px;
     opacity: 0.6;
     transition: all 0.3s ease-out 100ms;
 
