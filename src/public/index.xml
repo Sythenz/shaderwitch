@@ -9,6 +9,13 @@
     <lastBuildDate>Thu, 21 Mar 2024 15:37:22 +0100</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/index.html</guid>
+      <description>Shaderwit.ch is a place for tutorials I have created on the topic of that spooky thing the Unreal Engine community hasdeemed Shader Witchcraft, &#34;Black Magic&#34;, or that seemingly incredibly difficult mathematics topic to render graphicsthat everyone wants to learn, but no one wants to touch - I hope to make this easier for you.The secondary long-term goal of this is to also document the even harder to understand render pipeline of Unreal Engine,and to give a cursory overview of where Unreal sets up things like Shading Models, Render calls, and those hundredsof .</description>
+    </item>
+    <item>
       <title>Shader Witchcraft</title>
       <link>http://localhost:1313/shaderwitchcraft/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
