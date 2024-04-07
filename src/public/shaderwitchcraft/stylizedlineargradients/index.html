@@ -19,19 +19,19 @@
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <title>Stylized Linear Gradients :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1712353853" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1712353853" rel="stylesheet">
-    <link href="/css/fonts.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1712353853" rel="stylesheet">
-    <link href="/css/theme-auto.css?1712353853" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1712353853" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1712353853" rel="stylesheet">
-    <link href="/css/print.css?1712353853" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1712353853" rel="stylesheet">
-    <script src="/js/url.js?1712353853"></script>
-    <script src="/js/variant.js?1712353853"></script>
+    <link href="/css/fontawesome-all.min.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1712500523" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1712500523" rel="stylesheet">
+    <link href="/css/fonts.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1712500523" rel="stylesheet">
+    <link href="/css/theme-auto.css?1712500523" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1712500523" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1712500523" rel="stylesheet">
+    <link href="/css/print.css?1712500523" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1712500523" rel="stylesheet">
+    <script src="/js/url.js?1712500523"></script>
+    <script src="/js/variant.js?1712500523"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -108,7 +108,7 @@
 
 
 <p>
-    <a href="/Authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
+    <a href="/authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
     </a><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">Complete</span></span><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i> Unreal Version</span><span class="badge-content">4.0&#43;</span></span>
 </p>
 
@@ -116,54 +116,38 @@
   <div class="box-label"><i class="fa-fw fas fa-cat"></i> Note</div>
   <div class="box-content">
 
-<p>This article was originally written for <a href="https://80.lv/articles/creating-stylized-linear-gradient/" target="_blank">80.lvl</a>,
-thank you for hosting my little tutorial!</p>
+<p>This article was originally written for <a href="https://80.lv/articles/creating-stylized-linear-gradient/" target="_blank">80.lvl</a>, thank you for hosting my little tutorial!</p>
 </div>
 </div>
-<p><a href="#R-image-3b6bd47dbba3c050752954ba1618c896" class="lightbox-link"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b6bd47dbba3c050752954ba1618c896"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png"></a></p>
-<p>This tutorial is to teach you the basics of creating that stylized linear gradient seen in games like DOTA and League of
-Legends. We’ll be focusing mostly on learning World Position, Object Position and Object Radius. These three nodes
-combined will allow us to achieve the effect we need.</p>
-<p>In this tutorial I’ll be using a stylized blossom tree created by the awesome <a href="https://www.artstation.com/oblique/profile" target="_blank">Jonathan Riley</a>
-and has donated it to be used with this tutorial. All files for this tutorial will be available by the download link at the bottom.</p>
+<p><a href="#R-image-bec45abb73ed2ae771e289a7c9719146" class="lightbox-link"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bec45abb73ed2ae771e289a7c9719146"><img alt="Final linear gradient" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="https://cdn.80.lv/api/upload/content/f6/images/5d2c7e829ae83/widen_920x0.png"></a></p>
+<p>This tutorial is to teach you the basics of creating that stylized linear gradient seen in games like DOTA and League of Legends. We’ll be focusing mostly on learning World Position, Object Position and Object Radius. These three nodes combined will allow us to achieve the effect we need.</p>
+<p>In this tutorial I’ll be using a stylized blossom tree created by the awesome <a href="https://www.artstation.com/oblique/profile" target="_blank">Jonathan Riley</a> and has donated it to be used with this tutorial. All files for this tutorial will be available by the download link at the bottom.</p>
 <p>So let’s get started!</p>
 <h2 id="absolute-world-position">Absolute World Position</h2>
-<p>So, first things first – Let’s talk Absolute World Position. This material editor node gives the exact X, Y, and Z
-coordinates of your material on an object, relative to world. To demonstrate this, let’s create a basic material,
-i’m calling mine <code>M_Stylized</code> (which will become the basis for all stylized assets we use) and let’s drop
-in a ‘World Position’ node and plug it into Emissive.</p>
-<p>Placing this on our mesh you’ll see a glowing sphere of different colors, each color represents a different Unreal Unit
-at a given point per axis (X, Y, Z). To make this more visible, let’s place a clamp right after it and plug it into
-emissive.</p>
-<p><a href="#R-image-80f3b6b57a2788a8a1df118d47624bd8" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-80f3b6b57a2788a8a1df118d47624bd8"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy"></a>
+<p>So, first things first – Let’s talk Absolute World Position. This material editor node gives the exact X, Y, and Z coordinates of your material on an object, relative to world. To demonstrate this, let’s create a basic material, I’m calling mine <code>M_Stylized</code> (which will become the basis for all stylized assets we use) and let’s drop in a ‘World Position’ node and plug it into Emissive.</p>
+<p>Placing this on our mesh you’ll see a glowing sphere of different colors, each color represents a different Unreal Unit at a given point per axis (X, Y, Z). To make this more visible, let’s place a clamp right after it and plug it into emissive.</p>
+<p><a href="#R-image-e5026a604e6484913ce8a2ea76bfb75e" class="lightbox-link"><img class="noborder lazy lightbox noshadow figure-image" loading="lazy" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e5026a604e6484913ce8a2ea76bfb75e"><img class="noborder lazy lightbox noshadow lightbox-image" loading="lazy"></a>
 <figure><img src="https://cdn.80.lv/api/upload/content/f9/images/5d2c7e7ba7737/widen_920x0.png"><figcaption>
       <h4>World Position Node in Emissive</h4>
     </figcaption>
 </figure>
 </p>
-<p>By placing this material on any mesh in our scene and moving it around, you’ll find the color of the material changing
-based on the colors of its position.</p>
+<p>By placing this material on any mesh in our scene and moving it around, you’ll find the color of the material changing based on the colors of its position.</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/25/5d2c7e7f31831.gif"><figcaption>
       <h4>Absolute World Position on a mesh</h4>
     </figcaption>
 </figure>
 
 <h2 id="relative-positioning">Relative Positioning</h2>
-<p>So naturally, for our linear gradient we need to grab the Z vector, as we want our gradient to face upward in our
-material. Let’s add a component mask before the clamp and use B (Z), unchecking R and G. Once we place this on the mesh,
-drag the mesh around and you’ll find that when the mesh passes below the grid in editor, Z: 0.0, the mesh will
-turn black.</p>
+<p>So naturally, for our linear gradient we need to grab the Z vector, as we want our gradient to face upward in our material. Let’s add a component mask before the clamp and use B (Z), unchecking R and G. Once we place this on the mesh, drag the mesh around and you’ll find that when the mesh passes below the grid in editor, Z: 0.0, the mesh will turn black.</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/20/5d2c7e7cb52d5.gif"><figcaption>
       <h4>Gradient split relative to world</h4>
     </figcaption>
 </figure>
 
-<p>However, we would like our gradient to stay relative to the mesh itself. This means we’ve got some math to do! This is
-where Object Position and Object Radius come in. Object Position gives us the value of the center point of the bounds
-the material is assigned to. We’ll subtract this from our World Position Now you’ll find a hard split of black and white
-that stays with our mesh when we move it up and down! This will become the basis of our gradient.</p>
+<p>However, we would like our gradient to stay relative to the mesh itself. This means we’ve got some math to do! This is where Object Position and Object Radius come in. Object Position gives us the value of the center point of the bounds the material is assigned to. We’ll subtract this from our World Position Now you’ll find a hard split of black and white that stays with our mesh when we move it up and down! This will become the basis of our gradient.</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/2a/images/5d2c7e78d9ec6/widen_920x0.png"><figcaption>
       <h4>Subtracting our Object Position and radius to keep things relative.</h4>
     </figcaption>
@@ -175,12 +159,9 @@ that stays with our mesh when we move it up and down! This will become the basis
 </figure>
 
 <h2 id="relative-scale">Relative Scale</h2>
-<p>Let’s bring Object Radius into the mix. Object Radius gives us a value equal to the overall radius of our object. We will
-subtract this from our object position, you can think of this as a ‘range’ between bounds and center of the mesh.
-Again, we want to make sure our math is subtracted from the world position.</p>
-<p>When we do this, you’ll find the mesh is white, this is because we’re not taking into account the height extent we want
-our gradient to travel up. We can do this by dividing by a scalar value before our component mask. Changing this value
-extends or decreases the falloff on our gradient.</p>
+<p>Let’s bring Object Radius into the mix. Object Radius gives us a value equal to the overall radius of our object. We will subtract this from our object position, you can think of this as a ‘range’ between bounds and center of the mesh.</p>
+<p>Again, we want to make sure our math is subtracted from the world position.</p>
+<p>When we do this, you’ll find the mesh is white, this is because we’re not taking into account the height extent we want our gradient to travel up. We can do this by dividing by a scalar value before our component mask. Changing this value extends or decreases the falloff on our gradient.</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/9d/5d2c7e79b4806.png"><figcaption>
       <h4>Giving our gradient an exponent.</h4>
     </figcaption>
@@ -193,14 +174,9 @@ extends or decreases the falloff on our gradient.</p>
 </figure>
 
 <h2 id="position-offset">Position Offset</h2>
-<p>Alright! So we now have a very cool looking gradient that we can use for our stylized characters and props. But let’s say
-you want the gradient to begin higher up on the mesh instead of at the bottom? Well we know that the Object Position,
-that gives us the center of the bounds to our object, subtracting the object radius giving us our radius value for the
-gradient. We also know that these values give us a Vector 3, or X Y and Z coordinate.</p>
-<p>So why not offset the Z by adding to it? Let’s give it a shot. To create our new vector, we’ll take a Vector 2 and append
-on a scalar parameter. This gives us a new vector where X and Y are constant at 0, and the Z is our variable.
-If we add this to our math to find the gradient, we retain our X and Y, because adding 0 gives you the same value,
-and adding the Z’s together gives us our offset for where the gradient starts.</p>
+<p>Alright! So we now have a very cool looking gradient that we can use for our stylized characters and props. But let’s say you want the gradient to begin higher up on the mesh instead of at the bottom? Well we know that the Object Position, that gives us the center of the bounds to our object, subtracting the object radius giving us our radius value for the gradient. We also know that these values give us a Vector 3, or X Y and Z coordinate.</p>
+<p>So why not offset the Z by adding to it? Let’s give it a shot. To create our new vector, we’ll take a Vector 2 and append on a scalar parameter. This gives us a new vector where X and Y are constant at 0, and the Z is our variable.</p>
+<p>If we add this to our math to find the gradient, we retain our X and Y, because adding 0 gives you the same value, and adding the Z’s together gives us our offset for where the gradient starts.</p>
 <p>And here is an example of it in action!</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/97/images/5d2c7e77da89b/widen_920x0.png"><figcaption>
       <h4>Adding ZOffset to our position.</h4>
@@ -208,10 +184,7 @@ and adding the Z’s together gives us our offset for where the gradient starts.
 </figure>
 
 <h2 id="final-touches">Final Touches</h2>
-<p>Now we have a 0-1 gradient value that we can plug into a Linear Interpolate node. This node blends between two inputs
-based on an alpha, in this case our gradient. For the purposes of the tutorial, rather than using two different albedo
-textures, I’ve just multiplied one by 0.1 to get a much darker version of the same texture. By plugging the multiplied
-one into A, and the original into B, we get a gradient between light and dark. Here is an image of the final material.</p>
+<p>Now we have a 0-1 gradient value that we can plug into a Linear Interpolate node. This node blends between two inputs based on an alpha, in this case our gradient. For the purposes of the tutorial, rather than using two different albedo textures, I’ve just multiplied one by 0.1 to get a much darker version of the same texture. By plugging the multiplied one into A, and the original into B, we get a gradient between light and dark. Here is an image of the final material.</p>
 <figure><img src="https://cdn.80.lv/api/upload/content/4e/images/5d2c7e7a80c7c/widen_920x0.png"><figcaption>
       <h4>Linear interpolating diffuse color by gradient.</h4>
     </figcaption>
@@ -313,12 +286,12 @@ one into A, and the original into B, we get a gradient between light and dark. H
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1712353853" defer></script>
-        <script src="/js/search.js?1712353853" defer></script>
+        <script src="/js/auto-complete.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1712500523" defer></script>
+        <script src="/js/search.js?1712500523" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -396,8 +369,8 @@ one into A, and the original into B, we get a gradient between light and dark. H
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1712353853" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1712353853" defer></script>
-    <script src="/js/theme.js?1712353853" defer></script>
+    <script src="/js/clipboard.min.js?1712500523" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1712500523" defer></script>
+    <script src="/js/theme.js?1712500523" defer></script>
   </body>
 </html>

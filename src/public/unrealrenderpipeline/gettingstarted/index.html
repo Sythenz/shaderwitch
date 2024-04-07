@@ -21,19 +21,19 @@
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
     <title>Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1712353853" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1712353853" rel="stylesheet">
-    <link href="/css/fonts.css?1712353853" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712353853" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1712353853" rel="stylesheet">
-    <link href="/css/theme-auto.css?1712353853" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1712353853" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1712353853" rel="stylesheet">
-    <link href="/css/print.css?1712353853" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1712353853" rel="stylesheet">
-    <script src="/js/url.js?1712353853"></script>
-    <script src="/js/variant.js?1712353853"></script>
+    <link href="/css/fontawesome-all.min.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1712500523" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1712500523" rel="stylesheet">
+    <link href="/css/fonts.css?1712500523" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712500523" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1712500523" rel="stylesheet">
+    <link href="/css/theme-auto.css?1712500523" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1712500523" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1712500523" rel="stylesheet">
+    <link href="/css/print.css?1712500523" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1712500523" rel="stylesheet">
+    <script src="/js/url.js?1712500523"></script>
+    <script src="/js/variant.js?1712500523"></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -114,7 +114,7 @@ This page is a <b>current topic of research</b>, some things may not be accurate
 </div>
 
 <p>
-    <a href="/Authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
+    <a href="/authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
     </a><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">WIP</span></span>
 </p>
 <h2 id="workflow">Workflow</h2>
@@ -122,41 +122,26 @@ This page is a <b>current topic of research</b>, some things may not be accurate
 <a href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a>, <a href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a>
 to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of the
 engine as an Engine Modification.</p>
-<p>I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s
-rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.</p>
-<p>I should also preface all of this with a word on specs - Shader Compilation is quite an intensive process, and while I
-can give some ways to optimize and lower compile times, it requires a pretty hefty machine.</p>
-<p>For context - I currently am running a Ryzen 9 7950x, 128GB DDR5 RAM 3600MHz, an RTX 3080, and all of my storage is on
-NVMe SSDs - that said, I still find that this is a little overkill for most things</p>
+<p>I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.</p>
+<p>I should also preface all of this with a word on specs - Shader Compilation is quite an intensive process, and while I can give some ways to optimize and lower compile times, it requires a pretty hefty machine.</p>
+<p>For context - I currently am running a Ryzen 9 7950x, 128GB DDR5 RAM 3600MHz, an RTX 3080, and all of my storage is on NVMe SSDs - that said, I still find that this is a little overkill for most things</p>
 <p>I just wanted fast engine compile times. 😊</p>
 <h2 id="compiling-shaders">Compiling Shaders</h2>
-<p>In any of the three mentioned paths, shaders can be compiled by running <code>recompileshaders all</code> as a command in
-the console. Recompile shaders command works by invalidating the render cache by changing a GUID stored in
-<code>Engine/Shaders/Public/ShaderVersion.ush</code>.</p>
-<p>The All command will force shaders within the Derived Data Cache to be invalidated and recompiled and can take quite some
-time to recompile everything, a better command I use instead is <code>recompileshaders changed</code> which instead only recompiles
-shaders that Unreal has recognized as a modified usf/ush.</p>
-<p>Both ush and usf files are captured with the above commands, meaning the editor doesn&rsquo;t need to be closed.
-Unreal thankfully has set up a standard here, where any global shader ending in Common.ush is used across multiple paths,
-so modifying these is a pretty easy indicator that shader compilation will take longer.</p>
+<p>In any of the three mentioned paths, shaders can be compiled by running <code>recompileshaders all</code> as a command in the console. Recompile shaders command works by invalidating the render cache by changing a GUID stored in <code>Engine/Shaders/Public/ShaderVersion.ush</code>.</p>
+<p>The All command will force shaders within the Derived Data Cache to be invalidated and recompiled and can take quite some time to recompile everything, a better command I use instead is <code>recompileshaders changed</code> which instead only recompiles shaders that Unreal has recognized as a modified usf/ush.</p>
+<p>Both ush and usf files are captured with the above commands, meaning the editor doesn&rsquo;t need to be closed. Unreal thankfully has set up a standard here, where any global shader ending in Common.ush is used across multiple paths, so modifying these is a pretty easy indicator that shader compilation will take longer.</p>
 
 <div class="box notices cstyle info primary">
   <div class="box-label"><i class="fa-fw fas fa-cat"></i> Tip</div>
   <div class="box-content">
 
-<p><code>recompileshaders changed</code> can also be called by simply pressing Ctrl+Shift+. (period) on your keyboard, this runs
-the same command.</p>
+<p><code>recompileshaders changed</code> can also be called by simply pressing Ctrl+Shift+. (period) on your keyboard, this runs the same command.</p>
 </div>
 </div>
-<p>When calling this command, should you have a compiler error with your HLSL - you will inevitably crash the engine, this
-is where some ini file commands can come in useful, namely, Shader Development Mode.</p>
+<p>When calling this command, should you have a compiler error with your HLSL - you will inevitably crash the engine, this is where some ini file commands can come in useful, namely, Shader Development Mode.</p>
 <h2 id="shader-development-mode">Shader Development Mode</h2>
-<p>Shader Development Mode, can be enabled by editing <code>ConsoleVariables.ini</code> on either an Engine or Project level, in this
-file you will already see the command, <code>r.ShaderDevelopmentMode</code>, is one of the first and is commented out,
-removing the semi colon at the beginning will enable this.</p>
-<p>This mode when enabled provides two main features, the first is exposing more details on why a specific crash has occured
-by allowing Unreal to capture the specific compilation error. The second is that it puts the error in a sort of &rsquo;loop&rsquo;,
-giving you a second chance at recompiling before crashing the editor, along with displaying the HLSL error.</p>
+<p>Shader Development Mode, can be enabled by editing <code>ConsoleVariables.ini</code> on either an Engine or Project level, in this file you will already see the command, <code>r.ShaderDevelopmentMode</code>, is one of the first and is commented out,  sporemoving the semi colon at the beginning will enable this.</p>
+<p>This mode when enabled provides two main features, the first is exposing more details on why a specific crash has occured by allowing Unreal to capture the specific compilation error. The second is that it puts the error in a sort of &rsquo;loop&rsquo;, giving you a second chance at recompiling before crashing the editor, along with displaying the HLSL error.</p>
 
             <footer class="footline">
             </footer>
@@ -240,12 +225,12 @@ giving you a second chance at recompiling before crashing the editor, along with
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1712353853" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1712353853" defer></script>
-        <script src="/js/search.js?1712353853" defer></script>
+        <script src="/js/auto-complete.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1712500523" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1712500523" defer></script>
+        <script src="/js/search.js?1712500523" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -323,8 +308,8 @@ giving you a second chance at recompiling before crashing the editor, along with
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1712353853" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1712353853" defer></script>
-    <script src="/js/theme.js?1712353853" defer></script>
+    <script src="/js/clipboard.min.js?1712500523" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1712500523" defer></script>
+    <script src="/js/theme.js?1712500523" defer></script>
   </body>
 </html>

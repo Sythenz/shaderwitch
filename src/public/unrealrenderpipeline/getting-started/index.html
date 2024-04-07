@@ -5,37 +5,39 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.124.1">
     <meta name="generator" content="Relearn 5.26.2+tip">
-    <meta name="description" content="">
+    <meta name="description" content="This article acts as a getting started on modifying the render pipeline in Unreal, tips on debugging, compiling shaders and some helpful commands.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tags :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta name="twitter:description" content="This article acts as a getting started on modifying the render pipeline in Unreal, tips on debugging, compiling shaders and some helpful commands.">
 
-    <meta property="og:title" content="Tags :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:1313/tags/index.html">
+    <meta property="og:title" content="Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="og:description" content="This article acts as a getting started on modifying the render pipeline in Unreal, tips on debugging, compiling shaders and some helpful commands.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/unrealrenderpipeline/getting-started/index.html">
+    <meta property="article:section" content="Unreal Render Pipeline :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <meta property="article:published_time" content="2024-03-21T14:48:29+01:00">
+    <meta property="article:modified_time" content="2024-03-21T14:48:29+01:00">
     <meta property="og:site_name" content="Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
-    <title>Tags :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
-    <link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="Tags :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials">
+    <title>Getting Started :: Shaderwit.ch - Unreal Engine render pipeline documentation and tutorials</title>
     <!-- https://github.com/filamentgroup/loadCSS/blob/master/README.md#how-to-use -->
-    <link href="/css/fontawesome-all.min.css?1712499787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712499787" rel="stylesheet"></noscript>
-    <link href="/css/nucleus.css?1712499787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1712499787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712499787" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1712499787" rel="stylesheet">
-    <link href="/css/fonts.css?1712499787" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712499787" rel="stylesheet"></noscript>
-    <link href="/css/theme.css?1712499787" rel="stylesheet">
-    <link href="/css/theme-auto.css?1712499787" rel="stylesheet" id="R-variant-style">
-    <link href="/css/chroma-auto.css?1712499787" rel="stylesheet" id="R-variant-chroma-style">
-    <link href="/css/variant.css?1712499787" rel="stylesheet">
-    <link href="/css/print.css?1712499787" rel="stylesheet" media="print">
-    <link href="/css/ie.css?1712499787" rel="stylesheet">
-    <script src="/js/url.js?1712499787"></script>
-    <script src="/js/variant.js?1712499787"></script>
+    <link href="/css/fontawesome-all.min.css?1712499962" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1712499962" rel="stylesheet"></noscript>
+    <link href="/css/nucleus.css?1712499962" rel="stylesheet">
+    <link href="/css/auto-complete.css?1712499962" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1712499962" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1712499962" rel="stylesheet">
+    <link href="/css/fonts.css?1712499962" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fonts.css?1712499962" rel="stylesheet"></noscript>
+    <link href="/css/theme.css?1712499962" rel="stylesheet">
+    <link href="/css/theme-auto.css?1712499962" rel="stylesheet" id="R-variant-style">
+    <link href="/css/chroma-auto.css?1712499962" rel="stylesheet" id="R-variant-chroma-style">
+    <link href="/css/variant.css?1712499962" rel="stylesheet">
+    <link href="/css/print.css?1712499962" rel="stylesheet" media="print">
+    <link href="/css/ie.css?1712499962" rel="stylesheet">
+    <script src="/js/url.js?1712499962"></script>
+    <script src="/js/variant.js?1712499962"></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       // variant stuff
       window.relearn.themeVariantModifier='';
@@ -51,7 +53,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/tags/index.html">
+  <body class="mobile-support html" data-url="/unrealrenderpipeline/getting-started/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -62,19 +64,26 @@
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper"><nav class="TableOfContents">
+  <ul>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#compiling-shaders">Compiling Shaders</a></li>
+    <li><a href="#shader-development-mode">Shader Development Mode</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">Welcome to Shaderwit.ch</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tags</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/unrealrenderpipeline/index.html"><span itemprop="name">Unreal Render Pipeline</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Getting Started</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/index.html" title="Welcome to Shaderwit.ch (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/index.html" title="Unreal Render Pipeline (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/unrealrenderpipeline/plugins/index.html" title="Plugins (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -90,14 +99,69 @@
       <div id="R-main-overlay"></div>
       <main id="R-body-inner" class="highlightable default" tabindex="-1">
         <div class="flex-block-wrapper">
-          <article>
+          <article class="default">
             <header class="headline">
             </header>
-<h1 id="tags">Tags</h1>
+<h1 id="getting-started">Getting Started</h1>
+
+
+    
+<div class="box notices cstyle icon primary">
+  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Work in Progress</div>
+  <div class="box-content">
+<p>
+This page is a <b>current topic of research</b>, some things may not be accurate.</div>
+</div>
+
+<p>
+    <a href="/authors/alessa-codekitten-baker"><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Author</span><span class="badge-content">Alessa &#34;Codekitten&#34; Baker</span></span>
+    </a><span class="badge cstyle primary badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-info-circle"></i> Page Status</span><span class="badge-content">WIP</span></span>
+</p>
+<h2 id="workflow">Workflow</h2>
+<p>There are a couple of paths that Unreal Engine&rsquo;s render pipeline can be extended -
+<a href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a>, <a href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a>
+to externally write shaders and include them in material Custom Nodes, or modifying the existing ush/usf files of the
+engine as an Engine Modification.</p>
+<p>I have spent quite a lot of time attempting to figure out the best general workflow when extending Unreal Engine&rsquo;s
+rendering pipeline, but all of them benefit from some additional parameters that can be enabled in ini files.</p>
+<p>I should also preface all of this with a word on specs - Shader Compilation is quite an intensive process, and while I
+can give some ways to optimize and lower compile times, it requires a pretty hefty machine.</p>
+<p>For context - I currently am running a Ryzen 9 7950x, 128GB DDR5 RAM 3600MHz, an RTX 3080, and all of my storage is on
+NVMe SSDs - that said, I still find that this is a little overkill for most things</p>
+<p>I just wanted fast engine compile times. 😊</p>
+<h2 id="compiling-shaders">Compiling Shaders</h2>
+<p>In any of the three mentioned paths, shaders can be compiled by running <code>recompileshaders all</code> as a command in
+the console. Recompile shaders command works by invalidating the render cache by changing a GUID stored in
+<code>Engine/Shaders/Public/ShaderVersion.ush</code>.</p>
+<p>The All command will force shaders within the Derived Data Cache to be invalidated and recompiled and can take quite some
+time to recompile everything, a better command I use instead is <code>recompileshaders changed</code> which instead only recompiles
+shaders that Unreal has recognized as a modified usf/ush.</p>
+<p>Both ush and usf files are captured with the above commands, meaning the editor doesn&rsquo;t need to be closed.
+Unreal thankfully has set up a standard here, where any global shader ending in Common.ush is used across multiple paths,
+so modifying these is a pretty easy indicator that shader compilation will take longer.</p>
+
+<div class="box notices cstyle info primary">
+  <div class="box-label"><i class="fa-fw fas fa-cat"></i> Tip</div>
+  <div class="box-content">
+
+<p><code>recompileshaders changed</code> can also be called by simply pressing Ctrl+Shift+. (period) on your keyboard, this runs
+the same command.</p>
+</div>
+</div>
+<p>When calling this command, should you have a compiler error with your HLSL - you will inevitably crash the engine, this
+is where some ini file commands can come in useful, namely, Shader Development Mode.</p>
+<h2 id="shader-development-mode">Shader Development Mode</h2>
+<p>Shader Development Mode, can be enabled by editing <code>ConsoleVariables.ini</code> on either an Engine or Project level, in this
+file you will already see the command, <code>r.ShaderDevelopmentMode</code>, is one of the first and is commented out,
+removing the semi colon at the beginning will enable this.</p>
+<p>This mode when enabled provides two main features, the first is exposing more details on why a specific crash has occured
+by allowing Unreal to capture the specific compilation error. The second is that it puts the error in a sort of &rsquo;loop&rsquo;,
+giving you a second chance at recompiling before crashing the editor, along with displaying the HLSL error.</p>
 
             <footer class="footline">
             </footer>
           </article>
+
         </div>
       </main>
     </div>
@@ -176,12 +240,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1712499787" defer></script>
-        <script src="/js/lunr/lunr.min.js?1712499787" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1712499787" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1712499787" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1712499787" defer></script>
-        <script src="/js/search.js?1712499787" defer></script>
+        <script src="/js/auto-complete.js?1712499962" defer></script>
+        <script src="/js/lunr/lunr.min.js?1712499962" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1712499962" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1712499962" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1712499962" defer></script>
+        <script src="/js/search.js?1712499962" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -195,8 +259,8 @@
           <li data-nav-id="/about/index.html" class=""><a class="padding" href="/about/index.html">About</a></li>
           <li data-nav-id="/shaderwitchcraft/index.html" class=""><a class="padding" href="/shaderwitchcraft/index.html">Shader Witchcraft</a><ul id="R-subsections-435dc2108793be63a79713c1f61e24a2" class="morespace collapsible-menu">
           <li data-nav-id="/shaderwitchcraft/stylizedlineargradients/index.html" class=""><a class="padding" href="/shaderwitchcraft/stylizedlineargradients/index.html">Stylized Linear Gradients</a></li></ul></li>
-          <li data-nav-id="/unrealrenderpipeline/index.html" class=""><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
-          <li data-nav-id="/unrealrenderpipeline/gettingstarted/index.html" class=""><a class="padding" href="/unrealrenderpipeline/gettingstarted/index.html">Getting Started</a></li>
+          <li data-nav-id="/unrealrenderpipeline/index.html" class="parent "><a class="padding" href="/unrealrenderpipeline/index.html">Unreal Render Pipeline</a><ul id="R-subsections-e3171ec46ad95886aa133601e61448c8" class="morespace collapsible-menu">
+          <li data-nav-id="/unrealrenderpipeline/getting-started/index.html" class="active"><a class="padding" href="/unrealrenderpipeline/getting-started/index.html">Getting Started</a></li>
           <li data-nav-id="/unrealrenderpipeline/plugins/index.html" class="alwaysopen"><a class="padding" href="/unrealrenderpipeline/plugins/index.html">Plugins</a><ul id="R-subsections-5d9a6919420610ce98f07d44e754718c" class="morespace collapsible-menu">
           <li data-nav-id="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/virtualshaderpaths/index.html">Virtual Shader Paths</a></li>
           <li data-nav-id="/unrealrenderpipeline/plugins/sceneviewextensions/index.html" class=""><a class="padding" href="/unrealrenderpipeline/plugins/sceneviewextensions/index.html">Scene View Extensions</a></li></ul></li>
@@ -219,7 +283,7 @@
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/tags/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/unrealrenderpipeline/getting-started/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>
@@ -259,8 +323,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1712499787" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1712499787" defer></script>
-    <script src="/js/theme.js?1712499787" defer></script>
+    <script src="/js/clipboard.min.js?1712499962" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1712499962" defer></script>
+    <script src="/js/theme.js?1712499962" defer></script>
   </body>
 </html>
